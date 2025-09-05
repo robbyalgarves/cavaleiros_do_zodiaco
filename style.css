@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://i.imgur.com/3ZQ3Z3F.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+}
+
+header {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(0, 0, 50, 0.6);
+}
+
+header h1 {
+  font-size: 3em;
+  color: #ffd700;
+  text-transform: uppercase;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+main {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #00ffff;
+  border-bottom: 2px solid #00ffff;
+  padding-bottom: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 50, 0.6);
+  font-size: 0.9em;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ffd700;
+  }
+}
