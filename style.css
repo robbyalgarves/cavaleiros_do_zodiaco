@@ -1,57 +1,196 @@
+/* Fundo com constelação */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: url('https://i.imgur.com/3ZQ3Z3F.jpg') no-repeat center center fixed;
+  background-image: url("constelacao-fundo.jpg");
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #fff;
-  text-shadow: 0 0 5px #000;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-left: 220px;
 }
 
-header {
-  text-align: center;
-  padding: 50px 20px;
-  background: rgba(0, 0, 50, 0.6);
+/* Menu lateral fixo */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: rgba(0, 0, 50, 0.8);
+  padding: 20px;
+  box-shadow: 2px 0 10px #000;
+  z-index: 1000;
 }
 
-header h1 {
-  font-size: 3em;
+.menu-lateral h2 {
   color: #ffd700;
-  text-transform: uppercase;
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-header p {
   font-size: 1.2em;
-  color: #ccc;
+  margin-bottom: 20px;
 }
 
+.menu-lateral nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu-lateral nav a:hover {
+  color: #ffd700;
+}
+
+/* Conteúdo principal */
 main {
   padding: 20px;
-  background: rgba(0, 0, 0, 0.6);
+  color: #e3aada;
 }
 
-section {
-  margin-bottom: 30px;
+/* Título principal */
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #ffd700;
 }
 
-h2 {
-  color: #00ffff;
-  border-bottom: 2px solid #00ffff;
-  padding-bottom: 5px;
-}
-
-footer {
+/* Título com animação cósmica */
+.titulo-atena {
+  color: #fff;
+  font-size: 2.2em;
   text-align: center;
+  margin-top: 40px;
+  animation: pulsar 2s infinite;
+}
+
+/* Animação de pulsação */
+@keyframes pulsar {
+  0% { text-shadow: 0 0 5px #6a1b9a; }
+  50% { text-shadow: 0 0 20px #ab47bc; }
+  100% { text-shadow: 0 0 5px #6a1b9a; }
+}
+
+/* Galeria de personagens */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
   padding: 20px;
-  background: rgba(0, 0, 50, 0.6);
+}
+
+figure {
+  width: 180px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ffd700;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+figcaption {
+  margin-top: 10px;
   font-size: 0.9em;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+/* Linha do tempo */
+#linha-do-tempo {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+#linha-do-tempo h2 {
+  font-size: 2em;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.timeline li {
+  background: rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-left: 5px solid #ffd700;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 0 10px #000;
+  text-align: left;
+}
+
+.timeline li h3 {
+  margin-top: 0;
+  color: #ffd700;
+}
+
+.timeline li p {
+  margin: 10px 0;
+  font-size: 0.95em;
+}
+
+.timeline .ano {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: bold;
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+/* Curiosidades */
+#curiosidades {
+  background-color: #4a148c;
+  padding: 30px 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.1);
+}
+
+#curiosidades h2 {
+  color: #ffd700;
+}
+
+#curiosidades ul {
+  list-style-type: "✨ ";
+  padding-left: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  body {
+    padding-left: 0;
   }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ffd700;
+
+  .menu-lateral {
+    position: static;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+
+  .galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  figure {
+    width: 90%;
   }
 }
